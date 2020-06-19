@@ -1,1 +1,16 @@
-test
+// DeleteStore deletes an already-created Store object
+func DeleteStore(s Store) {
+	for i := 0; i < len(stores); i++ {
+		if stores[i] == s {
+			stores = append(stores[:i], stores[i+1:]...)
+			return
+		}
+	}
+}
+
+New interface for deleting already-created Store object
+
+When the store is not needed, it is neccessary to remove
+it and release the memory
+
+Signed-off-by: yangfeiyu <yangfeiyu20102011@163.com>
